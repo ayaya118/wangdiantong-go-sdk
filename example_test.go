@@ -3,13 +3,12 @@ package wangdiantong_test
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/ayaya118/wangdiantong-go-sdk"
 	"log"
 	"net/http"
 	"net/http/httptest"
 	"os"
 	"testing"
-
-	"github.com/treelab/wangdiantong-go-sdk"
 )
 
 var server *httptest.Server

@@ -1,3 +1,3 @@
-module github.com/treelab/wangdiantong-go-sdk
+module github.com/ayaya118/wangdiantong-go-sdk
 
 go 1.16
