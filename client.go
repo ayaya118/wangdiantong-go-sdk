@@ -12,6 +12,7 @@ import (
 	"sort"
 	"strings"
 	"time"
+	"unicode/utf8"
 )
 
 // Options are provided by Wangdiantong
@@ -109,7 +110,7 @@ func signRequest(params map[string]string, appSecret string) string {
 		// example:
 		// input: {"appkey" : "test2-xx"}
 		// output: "06-appkey:0008-test2-xx"
-		str := fmt.Sprintf("%02d-%s:%04d-%s", len(key), key, len(params[key]), params[key])
+		str := fmt.Sprintf("%02d-%s:%04d-%s", utf8.RuneCountInString(key), key, utf8.RuneCountInString(params[key]), params[key])
 		bf.WriteString(str)
 	}
 
@@ -135,7 +136,7 @@ func (c *client) post(url string, data map[string]string) (*http.Response, error
 	return c.httpClient.Do(req)
 }
 
-// Encode encodes the values into ``URL encoded'' form
+// Encode encodes the values into “URL encoded” form
 // ("bar=baz&foo=quux") sorted by key.
 func encode(params map[string]string) string {
 	var buf strings.Builder

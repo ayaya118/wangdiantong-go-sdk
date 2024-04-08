@@ -5,7 +5,7 @@ This library is a Go implementation for [旺店通 SDK](https://open.wangdian.cn
 ## Install
 
 ```bash
-$ go get github.com/treelab/wangdiantong-go-sdk
+$ go get https://github.com/ayaya118/wangdiantong-go-sdk.git
 ```
 
 ## Example
@@ -19,7 +19,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/treelab/wangdiantong-go-sdk"
+	"github.com/ayaya118/wangdiantong-go-sdk"
 )
 
 func main() {
